@@ -71,11 +71,21 @@ Este projeto automatiza a análise e envio semanal dos preços de combustíveis 
 
 ---
 
-## 🧠 Insight para recrutadores
-
 Este projeto demonstra:
 
 - Habilidade em manipulação de dados com `pandas`
 - Automação de tarefas com `pyautogui` e `win32com`
 - Integração entre dados públicos e canais de comunicação (WhatsApp)
 - Organização e empacotamento de scripts Python para uso prático
+
+🔧 Melhorias Futuras:
+
+1. Automatizar o download da planilha da ANP
+Atualmente, o arquivo .xlsx precisa ser baixado manualmente toda semana. Pretende-se implementar um sistema de web scraping ou verificação automática da URL do arquivo mais recente no portal da ANP.
+
+2. Eliminar dependência do PyAutoGUI
+O envio da imagem e da mensagem pelo WhatsApp Web depende de interações com a interface via pyautogui, exigindo que a janela esteja visível e ativa. O ideal seria migrar para integrações via API (ex: WhatsApp Business API) ou usar bibliotecas como selenium ou whatsapp-web.js, que permitem automações mais estáveis e headless.
+
+3. Expansão para todos os bairros de Salvador e Lauro de Freitas
+A ANP nem sempre fornece dados de todos os bairros. Pretende-se desenvolver um modelo baseado em geolocalização e interpolação para estimar os postos mais próximos, mesmo que o bairro não esteja listado na base de dados.
+
